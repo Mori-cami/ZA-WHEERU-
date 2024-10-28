@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Spin the wheel</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="btn"></div>
+            <div class="outerCover">
+                <div class ="innerCover">
+                    <div class ="wheel">
+                        <div class="item" style="--x:1;--clr:#459fe5;">
+                            <span>10000</span>
+                        </div>
+
+                        <div class="item" style="--x:2;--clr:hsl(132, 75%, 57%);">
+                            <span>10</span>
+                        </div>
+
+                        <div class="item" style="--x:3;--clr:hsl(68, 75%, 58%);">
+                            <span>100</span>
+                        </div>
+
+                        <div class="item" style="--x:4;--clr:hsl(0, 75%, 58%);">
+                            <span>50</span>
+                        </div>
+
+                        <div class="item" style="--x:5;--clr:rgb(13, 35, 232);">
+                            <span>0</span>
+                        </div>
+
+                        <div class="item" style="--x:6;--clr:hwb(109 27% 11%);">
+                            <span>25</span>
+                        </div>
+
+                        <div class="item" style="--x:7;--clr:hwb(0 84% 11%);">
+                            <span>1000</span>
+                        </div>
+
+                        <div class="item" style="--x:8;--clr:#e58d45;">
+                            <span>1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let wheel = document.querySelector('.wheel');
+            let btn = document.querySelector('.btn');
+            let degrees = Math.ceil(Math.random() * 3600);
+            btn.onclick = function() {
+                wheel.style.transform = "rotate(" + degrees + "deg)";
+                degrees += Math.ceil(Math.random() * 3600);
+            }
+        </script>
+    </body>
+</html>
